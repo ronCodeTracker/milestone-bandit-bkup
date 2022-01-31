@@ -23,51 +23,82 @@ let nativeObjectArray = [items_object.item1, items_object.item2,
     items_object.item6, items_object.item7, items_object.item8,
     items_object.item9, items_object.item10]
 
+// declare global variables
+let rndOne
+let rndTwo
+let rndThree
 
-//  random numbers between 0 - 9 (10 numbers)
+document.onload = main()
 
-
-let rndOne = randomGen()
-let rndTwo = randomGen()
-let rndThree = randomGen()
-
-
-
+console.log('Welcome to Savage Bandit Game')
 
 
-function randomGen() {
-    return Math.floor(Math.random() * 10)
+function runGame() {
+
+    //  random numbers between 0 - 9 (10 numbers)
+    rndOne = randomGen()
+    rndTwo = randomGen()
+    rndThree = randomGen()
+
+
+
+
+
+    function randomGen() {
+        return Math.floor(Math.random() * 10)
+
+    }
+
+
+    console.log('rndOne ' + rndOne)
+    console.log('rndTwo ' + rndTwo)
+    console.log('rndThree ' + rndThree)
+
+
+
+    console.log('rndOne ' + nativeObjectArray[rndOne])
+    console.log('rndTwo ' + nativeObjectArray[rndTwo])
+    console.log('rndThree ' + nativeObjectArray[rndThree])
+
+    // logic
+
+
+
+
+    if ((nativeObjectArray[rndOne] === nativeObjectArray[rndTwo]) && (nativeObjectArray[rndTwo] === nativeObjectArray[rndThree])) {
+
+        console.log('u win 10 dollars!')
+        if (nativeObjectArray[rndTwo] !== 'wolf') {
+            console.log('plus bonus of 15 dollars')
+        }
+        if (nativeObjectArray[rndTwo] === 'crazy_bonus') {
+            console.log('crazy bonus of 100 dollars')
+        }
+    }
+
 
 }
 
 
-console.log('rndOne ' + rndOne)
-console.log('rndTwo ' + rndTwo)
-console.log('rndThree ' + rndThree)
 
-
-
-console.log('rndOne ' + nativeObjectArray[rndOne])
-console.log('rndTwo ' + nativeObjectArray[rndTwo])
-console.log('rndThree ' + nativeObjectArray[rndThree])
-
-// logic
-
-
-
-
-if ((nativeObjectArray[rndOne] === nativeObjectArray[rndTwo]) && (nativeObjectArray[rndTwo] === nativeObjectArray[rndThree])) {
-
-    console.log('u win 10 dollars!')
-    if (nativeObjectArray[rndTwo] !== 'wolf') {
-        console.log('plus bonus of 15 dollars')
-    }
-    if (nativeObjectArray[rndTwo] === 'crazy_bonus') {
-        console.log('crazy bonus of 100 dollars')
-    }
+function sleep(time) {
+    return new Promise(resolve => {
+        setTimeout(resolve, time)
+    })
 }
 
 
-// stage1
-// stage1 next stage1 test
+async function main() {
+    await sleep(5000)
+    console.log('Good Luck!')
+    game()
+}
+
+async function game() {
+    await sleep(5000)
+    runGame()
+}
+
+
+
 
