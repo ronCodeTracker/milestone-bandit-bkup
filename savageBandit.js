@@ -104,6 +104,8 @@ function runGame() {
             win += 15
             winElem.textContent = '$ ' + win
             total += 15
+            totalElem.innerHTML = ' '
+            totalElem.textContent = '$ ' + total
         }
         if (nativeObjectArray[rndTwo] === 'crazy_bonus') {
             console.log('crazy bonus of 100 dollars')
@@ -112,7 +114,8 @@ function runGame() {
             win += 100
             winElem.textContent = '$ ' + win
             total += 100
-
+            totalElem.innerHTML = ' '
+            totalElem.textContent = '$ ' + total
 
         }
     }
