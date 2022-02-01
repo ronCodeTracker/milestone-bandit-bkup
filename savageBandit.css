@@ -79,6 +79,8 @@ footer, header {
     margin: 5%;
     min-width: 5%;
     max-width: 15%;
+    color: black;
+    background-color: white;
 }
 
 /*  ************************************************************ wolf */
@@ -92,6 +94,8 @@ footer, header {
     margin: 5%;
 }
 
+
+
 /*  ************************************************************* general */
 
 
@@ -103,6 +107,12 @@ footer {
     width: 20%;
     height: 15%;
 }
+
+.scores div {
+    background-color: teal;
+    color: white;
+}
+
 
 /*  ********************************************************   */
 @media (min-width: 600px) {
@@ -117,5 +127,10 @@ footer {
 
     header, footer {
         width: 100%;
+    }
+
+    .slots div {
+        color: white;
+        background-color: gray;
     }
 }
