@@ -37,51 +37,41 @@ var total = 0
 
 document.onload = main()
 
-console.log('Welcome to Savage Bandit Game')
 
+
+// run goodLuck function that doesn't show Good Luck!
 goodLuck()
 
 function runGame() {
-
-    
 
     //  random numbers between 0 - 9 (10 numbers)
     rndOne = randomGen()
     rndTwo = randomGen()
     rndThree = randomGen()
 
-
-
-
-
     function randomGen() {
         return Math.floor(Math.random() * 10)
 
     }
-
-    /*
-    console.log('rndOne ' + rndOne)
-    console.log('rndTwo ' + rndTwo)
-    console.log('rndThree ' + rndThree)
-    */
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
 
 
-    console.log('rndOne ' + nativeObjectArray[rndOne])
+    // show slot item in slots
     let slotOne = document.querySelector('.slotOne')
     slotOne.textContent = nativeObjectArray[rndOne]
 
-    console.log('rndTwo ' + nativeObjectArray[rndTwo])
+    
     let slotTwo = document.querySelector('.slotTwo')
     slotTwo.textContent = nativeObjectArray[rndTwo]
 
-    console.log('rndThree ' + nativeObjectArray[rndThree])
+    
     let slotThree = document.querySelector('.slotThree')
     slotThree.textContent = nativeObjectArray[rndThree]
 
+
+
     // logic
-
-
-
 
     if ((nativeObjectArray[rndOne] === nativeObjectArray[rndTwo])
         && (nativeObjectArray[rndTwo] === nativeObjectArray[rndThree])) {
@@ -121,10 +111,10 @@ function runGame() {
     }
 
 
-}
+}// end of runGame function  ~~~~~~~~~~~~~~~~~~~~
 
 
-
+// timing and ansyn await
 function sleep(time) {
     return new Promise(resolve => {
         setTimeout(resolve, time)
@@ -134,7 +124,7 @@ function sleep(time) {
 
 async function main() {
     await sleep(5000)
-    console.log('Good Luck!')
+    // make Good Luck! visible now
     headerLuck.style.visibility = 'visible'
     game()
 }
@@ -145,11 +135,11 @@ async function game() {
     buttonPlay.disabled = false
     
 }
+//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
-
-// ***************************** add good luck (after 5 seconds)  ******
+// ***************************** add good luck but invisible  ******
 
 function goodLuck() {
     let headerLuckSpt = document.querySelector('.header')
@@ -161,7 +151,16 @@ function goodLuck() {
 
     headerLuckSpt.append(headerLuck)
 
-
-
 }
+
+//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+async function wait() {
+    await sleep(1000)
+    runGame()
+}
+
+
 

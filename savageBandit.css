@@ -80,6 +80,7 @@ footer, header {
     margin: 5%;
     min-width: 5%;
     max-width: 15%;
+/*  **********   have color for small size display for readablity  ****/
     color: black;
     background-color: white;
 }
@@ -108,7 +109,8 @@ footer {
     width: 50%;
     height: 50px;
     border-radius:20px;
-    font-size: 3vw;
+    font-size: 2.5vw;
+    background-color: #d3d3d3;
 }
 
 .scores div {
@@ -135,7 +137,7 @@ aside {
     header, footer {
         width: 100%;
     }
-
+/*   ***************    change color of slots for better look and contrast *******/
     .slots div {
         color: white;
         background-color: gray;
