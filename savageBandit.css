@@ -1,0 +1,121 @@
+﻿
+
+/*
+    name:  Ronald Kiefer
+    Hebrew name:   ר ו נ  א ל ד   ~~~~~~~~~
+    Date:  January 31, 2022 Monday ~~~
+    Description: CSS  Holy Grail Milestone Proj 1
+    Description: Savage Bandit Game
+
+
+
+
+*/
+
+:root {
+    --pale-sage: #BFF4CB;
+    --sage: #84A98C;
+    --dusty-emerald: #52796f;
+    --deep-emerald: #354F52;
+    --night-forest: #2F3E46;
+}
+
+
+
+body {
+    background-color: white;
+}
+
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    text-align: center;
+    /*background-color: var(--night-forest);*/
+    background-color: white;
+    /*color: var(--pale-sage);*/
+    color: blue;
+}
+
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    min-height: 60vh;
+    flex-grow: 5;
+}
+
+aside, nav {
+    border: 2px solid teal;
+    /*background-color: var(--dusty-emerald);*/
+    background-color: white;
+    flex-grow: 2;
+}
+
+footer, header {
+    /*background-color: var(--sage);*/
+    background-color: white;
+    flex-grow: 1;
+    color: black;
+}
+
+/* *************************************************************  slots  */
+
+.slots {
+    display: flex;
+    justify-content: space-around;
+}
+
+.slots div {
+    border:4px solid lightblue;
+    padding: 7%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    margin: 5%;
+    min-width: 5%;
+    max-width: 15%;
+}
+
+/*  ************************************************************ wolf */
+
+.wolf {
+    display: flex;
+    justify-content: space-around;
+}
+
+.wolf div {
+    margin: 5%;
+}
+
+/*  ************************************************************* general */
+
+
+footer {
+    margin: 100px 0;
+}
+
+.play {
+    width: 20%;
+    height: 15%;
+}
+
+/*  ********************************************************   */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main {
+        max-width: 60%;
+    }
+
+    header, footer {
+        width: 100%;
+    }
+}
