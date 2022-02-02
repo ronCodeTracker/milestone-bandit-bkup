@@ -72,7 +72,7 @@ function runGame() {
 
 
     // logic
-
+    // basic win of three in a row
     if ((nativeObjectArray[rndOne] === nativeObjectArray[rndTwo])
         && (nativeObjectArray[rndTwo] === nativeObjectArray[rndThree])) {
 
@@ -87,6 +87,7 @@ function runGame() {
         totalElem.innerHTML = ' '
         totalElem.textContent = '$ ' + total
 
+        // if other than a wolf for win add 15 dollars bonus
         if (nativeObjectArray[rndTwo] !== 'wolf') {
             console.log('plus bonus of 15 dollars')
             let winElem = document.querySelector('.win')
@@ -97,6 +98,7 @@ function runGame() {
             totalElem.innerHTML = ' '
             totalElem.textContent = '$ ' + total
         }
+        // if the three are crazy-bonus items then grand prize of 100 bonus dollars
         if (nativeObjectArray[rndTwo] === 'crazy_bonus') {
             console.log('crazy bonus of 100 dollars')
             let winElem = document.querySelector('.win')
@@ -115,6 +117,8 @@ function runGame() {
 
 
 // timing and ansyn await
+
+// time promise used latter by async
 function sleep(time) {
     return new Promise(resolve => {
         setTimeout(resolve, time)
@@ -123,14 +127,14 @@ function sleep(time) {
 
 
 async function main() {
-    await sleep(5000)
+    await sleep(4000)
     // make Good Luck! visible now
     headerLuck.style.visibility = 'visible'
     game()
 }
 
 async function game() {
-    await sleep(5000)
+    await sleep(4000)
     let buttonPlay = document.querySelector('.play')
     buttonPlay.disabled = false
     
@@ -156,8 +160,9 @@ function goodLuck() {
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
-async function wait() {
+// in the html the event for button runs this wait function to delay by 1 second the spin
+// for new slot items
+async function waitSpin() {
     await sleep(1000)
     runGame()
 }

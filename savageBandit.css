@@ -123,6 +123,11 @@ aside {
     color: white;
 }
 
+.header {
+    background: #b19cd9;
+}
+
+
 /*  ********************************************************   */
 @media (min-width: 600px) {
     .container {
