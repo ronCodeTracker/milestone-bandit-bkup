@@ -2,6 +2,7 @@
 //  name:  Ronald Kiefer
 //  Hebrew name:    ר ו נ  א ל ד 
 //  date:  January 31, 2022  Monday
+//  update: February, 02, 2022 Wednsday
 // description  js file for milestone proj 1
 // description   savage bandit slot game
 
@@ -58,17 +59,41 @@ function runGame() {
 
 
     // show slot item in slots
+    // slot one
     let slotOne = document.querySelector('.slotOne')
     slotOne.textContent = nativeObjectArray[rndOne]
+    let imageUrl = 'url(./pictures/spin_milestone.gif)'
 
+    imageUrl = getTypeOfSlot(nativeObjectArray[rndOne])
+    
+    slotOne.style.backgroundImage = imageUrl
+
+    slotOne.style.backgroundRepeat = 'no-repeat'
+    slotOne.style.backgroundSize = '100% 100%'
+    
+    // slot two
     
     let slotTwo = document.querySelector('.slotTwo')
     slotTwo.textContent = nativeObjectArray[rndTwo]
 
-    
+    imageUrl2 = getTypeOfSlot(nativeObjectArray[rndTwo])
+
+    slotTwo.style.backgroundImage = imageUrl2
+
+    slotTwo.style.backgroundRepeat = 'no-repeat'
+    slotTwo.style.backgroundSize = '100% 100%'
+
+    // slot three
+
     let slotThree = document.querySelector('.slotThree')
     slotThree.textContent = nativeObjectArray[rndThree]
 
+    imageUrl3 = getTypeOfSlot(nativeObjectArray[rndThree])
+
+    slotThree.style.backgroundImage = imageUrl3
+
+    slotThree.style.backgroundRepeat = 'no-repeat'
+    slotThree.style.backgroundSize = '100% 100%'
 
 
     // logic
@@ -127,14 +152,14 @@ function sleep(time) {
 
 
 async function main() {
-    await sleep(4000)
+    await sleep(3000)
     // make Good Luck! visible now
     headerLuck.style.visibility = 'visible'
     game()
 }
 
 async function game() {
-    await sleep(4000)
+    await sleep(2000)
     let buttonPlay = document.querySelector('.play')
     buttonPlay.disabled = false
     
@@ -168,4 +193,26 @@ async function waitSpin() {
 }
 
 
-
+function getTypeOfSlot(slotItem) {
+    if (slotItem === 'wolf') {
+        return 'url(./pictures/wolf_milestone.gif'
+    }
+    else if (slotItem === 'black_bear') {
+        return 'url(./pictures/blackBear_milestone.gif'
+    }
+    else if (slotItem === 'feather') {
+        return 'url(./pictures/feather_milestone.gif'
+    }
+    else if (slotItem === 'hawk') {
+        return 'url(./pictures/hawk_milestone.gif'
+    }
+    else if (slotItem === 'crazy_bonus') {
+        return 'url(./pictures/crazy_milestone.gif'
+    }
+    else if (slotItem === 'bar') {
+        return 'url(./pictures/bar_milestone.gif'
+    }
+    else {
+        return 'url(./pictures/spin_milestone.gif)'
+    }
+}
