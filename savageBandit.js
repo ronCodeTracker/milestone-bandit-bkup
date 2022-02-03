@@ -198,7 +198,7 @@ function getTypeOfSlot(slotItem) {
         return 'url(./pictures/wolf_milestone.gif'
     }
     else if (slotItem === 'black_bear') {
-        return 'url(./pictures/blackBear_milestone.gif'
+        return 'url(./pictures/blackBear.gif'
     }
     else if (slotItem === 'feather') {
         return 'url(./pictures/feather_milestone.gif'
