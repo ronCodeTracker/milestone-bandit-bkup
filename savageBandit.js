@@ -35,6 +35,8 @@ let rndThree
 let headerLuck
 var win
 var total = 0
+var winGraphic
+var winGraphic2
 
 document.onload = main()
 
@@ -44,6 +46,9 @@ document.onload = main()
 goodLuck()
 
 function runGame() {
+
+    winGraphicsDel()
+    winGraphicsTwoDel()
 
     //  random numbers between 0 - 9 (10 numbers)
     rndOne = randomGen()
@@ -111,6 +116,7 @@ function runGame() {
         let totalElem  = document.querySelector('.total')
         totalElem.innerHTML = ' '
         totalElem.textContent = '$ ' + total
+        winGraphics()
 
         // if other than a wolf for win add 15 dollars bonus
         if (nativeObjectArray[rndTwo] !== 'wolf') {
@@ -122,6 +128,7 @@ function runGame() {
             total += 15
             totalElem.innerHTML = ' '
             totalElem.textContent = '$ ' + total
+            winGraphics()
         }
         // if the three are crazy-bonus items then grand prize of 100 bonus dollars
         if (nativeObjectArray[rndTwo] === 'crazy_bonus') {
@@ -133,6 +140,7 @@ function runGame() {
             total += 100
             totalElem.innerHTML = ' '
             totalElem.textContent = '$ ' + total
+            winGraphics()
 
         }
     }
@@ -215,4 +223,57 @@ function getTypeOfSlot(slotItem) {
     else {
         return 'url(./pictures/spin_milestone.gif)'
     }
+}
+
+
+
+function winGraphics() {
+    winGraphic = document.querySelectorAll('.slots div')
+    waitWinGraphic()
+    winGraphicTwo()
+    
+    
+}
+
+function winGraphicsDel() {
+    let winGraphicDel = document.querySelectorAll('.slots div')
+    
+    winGraphicDel.forEach(graph => {
+         graph.style.border = '4px solid lightblue'
+    })
+    
+}
+
+
+async function waitWinGraphic() {
+    await sleep(1000)
+    winGraphic.forEach(graph => {
+
+        graph.style.border = '5px solid green';
+
+    })
+    waitWinGraphicBlue()
+}
+
+
+async function waitWinGraphicBlue() {
+    await sleep(1000)
+    winGraphic.forEach(graph => {
+
+        graph.style.border = '5px solid blue';
+    })
+}
+
+function winGraphicTwo(){
+    winGraphic2 = document.querySelector('aside')
+    winGraphic2.textContent = "WINNER!"
+    winGraphic2.style.color = 'blue'
+    winGraphic2.style.padding = '5px'
+    winGraphic2.style.fontSize = '2em'
+}
+
+function winGraphicsTwoDel() {
+    winGraphic2 = document.querySelector('aside')
+    winGraphic2.textContent = 'aside'
+    winGraphic2.style.color = 'white'
 }
