@@ -47,6 +47,11 @@ goodLuck()
 
 function runGame() {
 
+    /*
+    var audio = new Audio('./sounds/fanfare.wav')
+    audio.play()
+    */
+
     winGraphicsDel()
     winGraphicsTwoDel()
 
@@ -117,6 +122,8 @@ function runGame() {
         totalElem.innerHTML = ' '
         totalElem.textContent = '$ ' + total
         winGraphics()
+        sound()
+        waitWinnerGraphic()
 
         // if other than a wolf for win add 15 dollars bonus
         if (nativeObjectArray[rndTwo] !== 'wolf') {
@@ -128,7 +135,7 @@ function runGame() {
             total += 15
             totalElem.innerHTML = ' '
             totalElem.textContent = '$ ' + total
-            winGraphics()
+            
         }
         // if the three are crazy-bonus items then grand prize of 100 bonus dollars
         if (nativeObjectArray[rndTwo] === 'crazy_bonus') {
@@ -140,7 +147,7 @@ function runGame() {
             total += 100
             totalElem.innerHTML = ' '
             totalElem.textContent = '$ ' + total
-            winGraphics()
+            
 
         }
     }
@@ -225,7 +232,7 @@ function getTypeOfSlot(slotItem) {
     }
 }
 
-
+//  graphics functions for when the player wins
 
 function winGraphics() {
     winGraphic = document.querySelectorAll('.slots div')
@@ -276,4 +283,36 @@ function winGraphicsTwoDel() {
     winGraphic2 = document.querySelector('aside')
     winGraphic2.textContent = 'aside'
     winGraphic2.style.color = 'white'
+}
+
+
+async function waitWinnerGraphic() {
+    await sleep(500)
+    winGraphic.forEach(graph => {
+
+        winGraphic2 = document.querySelector('aside')
+        winGraphic2.style.color = 'red'
+        waitWinnerGraphic2()
+    })
+}
+
+async function waitWinnerGraphic2() {
+    await sleep(500)
+    winGraphic.forEach(graph => {
+
+        winGraphic2 = document.querySelector('aside')
+        winGraphic2.style.color = 'blue'
+
+    })
+}
+
+//   *****************************************************
+
+function sound() {
+    
+    var audio = new Audio('./sounds/fanfare.wav')
+    audio.play()
+    
+
+    
 }
