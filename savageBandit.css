@@ -91,16 +91,19 @@ footer, header {
 }
 
 .slotOne {
+    background-image: url(./pictures/spin_milestone.gif);
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .slotTwo {
+    background-image: url(./pictures/spin_milestone.gif);
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .slotThree {
+    background-image: url(./pictures/spin_milestone.gif);
     background-repeat: no-repeat;
     background-size: 100%;
 }
